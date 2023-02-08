@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Enter any text or url</h2>
+        <input type="text" placeholder="Text or URL" id="txt">
+        <div id="imgbox" class="imgbox">
+            <img src="" id="QRimg">
+            <a href="" id="download"  download>
+                Download
+              </a>
+        </div>
+        
+        <button onclick="getcode()" id="btn">Generate QR Code</button>
+    </div>
+
+    <script>
+        let imgbox = document.getElementById("imgbox");
+        let QRimg = document.getElementById("QRimg");
+        let txt = document.getElementById("txt");
+        let download = document.getElementById("download");
+
+
+        function getcode(){
+            if(txt.value.length > 0){
+                QRimg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + txt.value;
+                download.href = QRimg.src;
+                imgbox.classList.toggle("active");
+            }
+            else{
+                txt.classList.add('error');
+
+                setTimeout(() => {
+                    txt.classList.remove('error');
+                },1000);
+            }
+            
+        }
+    </script>
+</body>
+</html>
