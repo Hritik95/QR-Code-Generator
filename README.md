@@ -1,7 +1,8 @@
 
 # QR Code Generator
 
-QR code generator using html, css and javascript. Here I have used QR Code Api to get QR code. link to api website - https://goqr.me/api
+QR code generator using html, css and javascript. Here I have used QR Code Api to get QR code. link to api website - https://goqr.me/api 
+To see project Click here - https://hritik95.github.io/QR-Code-Generator/
 
 
 ## Language Used
